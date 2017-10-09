@@ -17,8 +17,26 @@ import requests
 
 # PART 0
 
-# Write your code for Part 0 here.
+try:
+    f = open("gallery.html", "r")
+    html = f.read()
+    f.close()
+except:
+    newman_taylor_gallery = "http://newmantaylor.com/gallery.html"
+    response = requests.get(newman_taylor_gallery)
+    html = response.text
+    f = open("gallery.html", "w")
+    f.write(html)
+    f.close()
 
+soup = BeautifulSoup(html, "html.parser")
+img_alt_text_lst = []
+imgs = soup.find_all("img")
+for img in imgs:
+    alt = img.get("alt", "No alternative text provided!")
+    img_alt_text_lst.append(alt)
+for element in img_alt_text_lst:
+    print(element)
 
 # PART 1
 
