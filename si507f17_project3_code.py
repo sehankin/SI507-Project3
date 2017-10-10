@@ -18,20 +18,20 @@ import requests
 # PART 0
 
 try:
-    f = open("gallery.html", "r")
-    html = f.read()
-    f.close()
+    gallery_file = open("gallery.html", "r")
+    html = gallery_file.read()
+    gallery_file.close()
 except:
     newman_taylor_gallery = "http://newmantaylor.com/gallery.html"
     response = requests.get(newman_taylor_gallery)
     html = response.text
-    f = open("gallery.html", "w")
-    f.write(html)
-    f.close()
+    gallery_file = open("gallery.html", "w")
+    gallery_file.write(html)
+    gallery_file.close()
 
-soup = BeautifulSoup(html, "html.parser")
+gallery_soup = BeautifulSoup(html, "html.parser")
 img_alt_text_lst = []
-imgs = soup.find_all("img")
+imgs = gallery_soup.find_all("img")
 for img in imgs:
     alt = img.get("alt", "No alternative text provided!")
     img_alt_text_lst.append(alt)
@@ -40,78 +40,56 @@ for element in img_alt_text_lst:
 
 # PART 1
 
-# Get the main page data...
+try:
+    nps_gov_file = open("nps_gov_data.html", "r")
+    html = nps_gov_file.read()
+    nps_gov_file.close()
+except:
+    nps_gov_home = "https://www.nps.gov/index.htm"
+    response = requests.get(nps_gov_home)
+    html = response.text
+    nps_gov_file = open("nps_gov_data.html", "w")
+    nps_gov_file.write(html)
+    nps_gov_file.close()
 
-# Try to get and cache main page data if not yet cached
-# Result of a following try/except block should be that
-# there exists a file nps_gov_data.html,
-# and the html text saved in it is stored in a variable
-# that the rest of the program can access.
-
-# We've provided comments to guide you through the complex try/except,
-# but if you prefer to build up the code to do this scraping
-# and caching yourself, that is OK.
-
-
-
-
-
-
-# Get individual states' data...
-
-# Result of a following try/except block should be that
-# there exist 3 files:
-#   1. arkansas_data.html
-#   2. california_data.html
-#   3. michigan_data.html
-# and the HTML-formatted text stored in each one is available
-# in a variable or data structure
-# that the rest of the program can access.
-
-# TRY:
-# To open and read all 3 of the files
-
-# But if you can't, EXCEPT:
-
-# Create a BeautifulSoup instance of main page data
-# Access the unordered list with the states' dropdown
-
-# Get a list of all the li (list elements) from the unordered list,
-# using the BeautifulSoup find_all method
-
-# Use a list comprehension or accumulation to get all of the 'href' attributes
-# of the 'a' tag objects in each li, instead of the full li objects
-
-# Filter the list of relative URLs you just got to include only the 3 you want
-# (AR's, CA's, MI's), using the accumulator pattern & conditional statements
-
-
-# Create 3 URLs to access data from by appending those 3 href values
-# to the main part of the NPS url. Save each URL in a variable.
-
-
-# To figure out what URLs you want to get data from
-# (as if you weren't told initially)...
-# As seen if you debug on the actual site.
-# e.g. Maine parks URL is "http://www.nps.gov/state/me/index.htm",
-# Michigan's is "http://www.nps.gov/state/mi/index.htm"
-# So if you compare that to the values in those href attributes you just got,
-# how can you build the full URLs?
-
-
-# Finally, get the HTML data from each of these URLs,
-# and save it in the variables you used in the try clause
-# (Make sure they're the same variables you used in the try clause!
-# Otherwise, all this code will run every time you run the program!)
-
-
-# And then, write each set of data to a file so this won't have to run again.
-
-
-
-
-
-
+state_list = ["Arkansas", "California", "Michigan"]
+for state in state_list:
+    state_str_lc = state.lower()
+    state_str_lc_no_spaces = state_str_lc.replace(" ", "_")
+    state_data_suffix = "_data.html"
+    state_data_html = state_str_lc_no_spaces + state_data_suffix
+    try:
+        state_data_file = open(state_data_html, "r")
+        html = state_data_file.read()
+        state_data_file.close()
+    except:
+        try:
+            nps_gov_file = open("nps_gov_data.html", "r")
+            html = nps_gov_file.read()
+            nps_gov_file.close()
+        except:
+            nps_gov_home = "https://www.nps.gov/index.htm"
+            response = requests.get(nps_gov_home)
+            html = response.text
+            nps_gov_file = open("nps_gov_data.html", "w")
+            nps_gov_file.write(html)
+            nps_gov_file.close()
+        nps_gov_soup = BeautifulSoup(html, "html.parser")
+        dropdown_class = "dropdown-menu SearchBar-keywordSearch"
+        dropdown = nps_gov_soup.find("ul", {"class": dropdown_class})
+        dropdown_states = dropdown.find_all("li")
+        for dropdown_state in dropdown_states:
+            state_link = dropdown_state.find("a")
+            state_link_text = state_link.text
+            if state_link_text == state:
+                state_link_href = state_link.get("href")
+                nps_gov_home = "https://www.nps.gov/index.htm"
+                nps_state = nps_gov_home + state_link_href
+                response = requests.get(nps_state)
+                html = response.text
+                nps_state_file = open(state_data_html, "w")
+                nps_state_file.write(html)
+                nps_state_file.close()
 
 # PART 2
 
