@@ -1,6 +1,6 @@
-<!doctype html> <html lang="en" class="no-js"> <!-- Content Copyright National Park Service -->
-<!-- JavaScript & DHTML Code Copyright &copy; 1998-2017, PaperThin, Inc. All Rights Reserved. --> <head> <meta content="IE=edge" http-equiv="X-UA-Compatible"> <title>NPS.gov Homepage (U.S. National Park Service)</title> <script>
-var jsDlgLoader = '/loader.cfm';
+<!doctype html> <html lang="en"  class="no-js"> <!-- Content Copyright National Park Service -->
+<!-- JavaScript & DHTML Code Copyright &copy; 1998-2017, PaperThin, Inc. All Rights Reserved. --> <head> <meta content="IE=edge" http-equiv="X-UA-Compatible"> <title>Michigan (U.S. National Park Service)</title> <script>
+var jsDlgLoader = '/state/mi/loader.cfm';
 var jsSiteResourceLoader = '/cs-resources.cfm?r=';
 var jsSiteResourceSettings = {canCombine: false, canMinify: false};
 </script>
@@ -10,7 +10,6 @@ var jsSiteResourceSettings = {canCombine: false, canMinify: false};
 <!-- beg (2) SecondaryResources -->
 <!-- end (2) SecondaryResources -->
 <!-- beg (3) StyleTags -->
-<link rel="stylesheet" href="/common/commonspot/templates/assets/css/commonspotRTE.css" type="text/css" />
 <!-- end (3) StyleTags -->
 <!-- beg (4) JavaScript -->
 <script type="text/javascript">
@@ -18,25 +17,24 @@ var jsSiteResourceSettings = {canCombine: false, canMinify: false};
 var gMenuControlID = 0;
 var menus_included = 0;
 var jsSiteID = 1;
-var jsSubSiteID = 1;
-var js_gvPageID = 5102204;
-var jsPageID = 5102204;
+var jsSubSiteID = 30167;
+var js_gvPageID = 4085661;
+var jsPageID = 4085661;
 var jsPageSetID = 0;
 var jsPageType = 0;
 var jsSiteSecurityCreateControls = 0;
 var jsShowRejectForApprover = 1;
 // -->
 </script><script>
-var jsDlgLoader = '/loader.cfm';
+var jsDlgLoader = '/state/mi/loader.cfm';
 var jsSiteResourceLoader = '/cs-resources.cfm?r=';
 var jsSiteResourceSettings = {canCombine: false, canMinify: false};
 </script>
 <!-- end (4) JavaScript -->
 <!-- beg (5) CustomHead -->
-<!-- override Global Homepage from NPS Homepage-->
 <meta charset="utf-8">
 <link href="/common/commonspot/templates/images/icons/favicon.ico" rel="shortcut icon">
-<meta name="description" content="Homepage for the National Park Service website" />
+<meta name="description" content="Michigan">
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,6 +54,7 @@ var jsSiteResourceSettings = {canCombine: false, canMinify: false};
 <script src="/common/commonspot/templates/assetsCT/javascripts/app.early.min.js?v=3hto-103g2dv"></script>
 <link href="/common/commonspot/templates/assetsCT/stylesheets/css/main.min.css?v=6sid-1hts5t9" media="screen, print" rel="stylesheet">
 <!-- <![endif]-->
+<link href="/common/commonspot/templates/assets/css/statePage.css" rel="stylesheet">
 <link href="/common/commonspot/templates/assetsCT/ctExtraStyles.css" media="screen, print" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Open+Sans:700,600,400|Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
 <link href="/common/commonspot/templates/assets/css/redesign.css" media="screen, print" rel="stylesheet">
@@ -70,176 +69,22 @@ border-collapse:separate;
 }
 </style>
 <script src='/common/commonspot/templates/js/federated-analytics-uav1.js?ver=true&agency=DOI&subagency=NPS&exts=rtf,odt,ods,odp&dclink=true&enhlink=true' id='_fed_an_ua_tag'></script>
-<meta property="og:title" content="NPS.gov Homepage (U.S. National Park Service)" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.nps.gov/index.htm" />
-<meta property="og:description" content="Homepage for the National Park Service website" />
 <!-- end (5) CustomHead -->
 <!-- beg (6) TertiaryResources -->
-<meta property="og:image" content="https://www.nps.gov/images/FYP_ETP_STLI.png" /><meta property="og:image:height" content="261" /><meta property="og:image:width" content="447" /><meta property="og:image:alt" content="Statue of Liberty&#39;s crown with Find Your Park text superimposed" />
 <!-- end (6) TertiaryResources -->
 <!-- beg (7) authormode_inlinestyles -->
 <link rel="stylesheet" type="text/css" href="/commonspot/commonspot.css" id="cs_maincss">
 <!-- end (7) authormode_inlinestyles -->
-</head><body class="Global Homepage"><span role="navigation" aria-label="Top of page" id="__topdoc__"></span><script type="text/javascript">
-<!--
-// always-include-ie.js  Copyright 1998-2005 PaperThin, Inc. All rights reserved.
-bName = navigator.appName;
-bVer = parseInt(navigator.appVersion);
-var bCanRollover=0
-if (bName == "Netscape")
-{
-if(bVer >= 3)
-bCanRollover=1;
-}
-else if (bName == "Microsoft Internet Explorer")
-{
-if(bVer >= 4)
-bCanRollover=1;
-}
-function ImageSet(imgID,newTarget)
-{
-if (bCanRollover)
-document[imgID].src=newTarget;
-}
-function clearStatus()
-{
-window.status = "";
-}
-function setStatbar(statbar)
-{
-// #22793 - no-op because browsers don't honor the assignment
-//	var strStatbar=unescape(statbar);
-//	window.status=strStatbar;
-}
-function onLoadComplete()
-{
-if( menus_included == 1 )
-document.onmouseover = document_mouseover;	// defined in menu_ie.js
-}
-function HandleLink(parentID,link,displaylink)
-{
-// links are in one of the following formats:
-// 		cpe_60_0,CP___PAGEID=100
-// 		CPNEWWIN:WindowName^params@CP___
-// 			CPNEWWIN:child^top=110:left=130:ww=140:hh=150:tb=1:loc=1:dir=0:stat=1:mb=1:sb=1:rs=1@CP___PAGEID=3811,Adv-Search-2,1
-// displaylink is the server relative URL or fully qualified URL
-windowname = "";
-windowparams = "";
-// "CPNEWWIN:" & NewWindowName & "^" & params & "@" & linkStruct.LinkURL;
-pos = link.indexOf("CPNEWWIN:");
-if (pos != -1)
-{
-pos1 = link.indexOf ("^");
-windowname = link.substring (pos+9, pos1);
-pos2 = link.indexOf ("@");
-windowparams = link.substring (pos1 + 1, pos2);
-link = link.substring (pos2 + 1, link.length);
-}
-if( displaylink && displaylink != "" )
-{
-if (windowname == "")
-window.location = displaylink;
-else
-{
-windowparams = FormatWindowParams(windowparams);
-window.open (displaylink, windowname, windowparams);
-}
-}
-else
-{
-targetLink = link;
-if (link.indexOf ("CP___") != -1)
-{
-httpPos = -1;
-commaPos = link.indexOf(",");
-if (commaPos != -1)
-{
-targetUrl = link.substr(commaPos + 1);
-if (targetUrl.indexOf("://") != -1 || targetUrl.indexOf("/") == 0)
-{
-httpPos = commaPos + 1;
-}
-}
-if (httpPos != -1)
-{
-targetLink = link.substr(httpPos);
-commaPos = targetLink.indexOf(",");
-if (commaPos != -1)
-targetLink = targetLink.substr(0, commaPos);
-}
-else
-targetLink = jsDlgLoader + "?csModule=utilities/handle-link&thelink=" + link;
-if (windowname == "")
-window.location = targetLink;
-else
-{
-windowparams = FormatWindowParams(windowparams);
-window.open (targetLink, windowname, windowparams);
-}
-}
-else
-{
-//commaPos = link.indexOf(",");
-//if (commaPos != -1)
-//	link = link.substr(0, commaPos);
-if (windowname == "")
-window.location = link;
-else
-{
-windowparams = FormatWindowParams(windowparams);
-window.open (link, windowname, windowparams);
-}
-}
-}
-}
-function doWindowOpen(href,name,params)
-{
-if (params != '')
-window.open (href, name, params);
-else
-window.open (href, name);
-}
-// 	CPNEWWIN:child^top=110:left=130:ww=140:hh=150:tb=1:loc=1:dir=0:stat=1:mb=1:sb=1:rs=1@CP___PAGEID=3811,Adv-Search-2,1
-function FormatWindowParams(windowparams)
-{
-if( windowparams.indexOf(":loc=") != -1 || windowparams.indexOf(":ww=") != -1 || windowparams.indexOf(":hh=") != -1 ||
-windowparams.indexOf(":left=") != -1 || windowparams.indexOf(":top=") != -1 )
-{
-windowparams = substringReplace(windowparams,':left=',',left=');
-windowparams = substringReplace(windowparams,'left=','left=');
-windowparams = substringReplace(windowparams,':ww=',',width=');
-windowparams = substringReplace(windowparams,'ww=','width=');
-windowparams = substringReplace(windowparams,':hh=',',height=');
-windowparams = substringReplace(windowparams,'hh=','height=');
-windowparams = substringReplace(windowparams,':loc=',',location=');
-windowparams = substringReplace(windowparams,'loc=','location=');
-windowparams = substringReplace(windowparams,':dir=',',directories=');
-windowparams = substringReplace(windowparams,'dir=','directories=');
-windowparams = substringReplace(windowparams,':tb=',',toolbar=');
-windowparams = substringReplace(windowparams,'tb=','toolbar=');
-windowparams = substringReplace(windowparams,':stat=',',status=');
-windowparams = substringReplace(windowparams,':mb=',',menubar=');
-windowparams = substringReplace(windowparams,':sb=',',scrollbars=');
-windowparams = substringReplace(windowparams,':rs=',',resizable=');
-}
-return windowparams;
-}
-// -->
-</script>
-<!--googleoff: index-->
-<div tabindex="-1" id="beforeSkipLinks"></div>
+</head><body class="ParkSite"><span role="navigation" aria-label="Top of page" id="__topdoc__"></span>
 <div class="skip-links">
 <ul>
 <li><a href="#GlobalNav-toggle">Skip to global NPS navigation</a></li>
+<li><a href="#ParkNavigation">Skip to park navigation</a></li>
 <li><a href="#main">Skip to main content</a></li>
+<li><a href="#ParkFooter">Skip to park information</a></li>
 <li><a href="#GlobalFooter">Skip to footer</a></li>
 </ul>
 </div>
-<!--googleon: index-->
-<!--googleoff: index-->
-<div class="PromoBanner"></div>
-<!--googleon: index-->
 <!--googleoff: index-->
 <div class="GlobalHeader">
 <div class="container relative">
@@ -295,79 +140,11 @@ Menu
 </div>
 <nav id="GlobalNav-container" class="row" role="navigation" aria-label="NPS Primary Navigation" aria-labelledby="GlobalNav-toggle" tabindex="-1">
 <ul id="GlobalNav" class="GlobalNav GlobalNav-lvl-1">
-<div id="cs_control_699042" class="cs_control  CS_Element_CustomCF"><div id="CS_CCF_5102204_699042"><div id="cs_control_481717" class="cs_control  CS_Element_Custom"><!-- _CSDPFID=5102204|5102204=_CSDPFID -->
-<style type="text/css">
-div.ColumnMain #npsNav h2 { display:none }â€‹
-</style>
-<!-- nav -->
-<!--googleoff: index-->
-<div id="npsNav"><li id="LocalNav-mobile">
-<!-- This navigation template (rootsubsite) needs to be added: / -->
-</div>
-<!--googleon: index-->
-</div></div></li></div>
 </ul> <!-- <ul id="GlobalNav" class="GlobalNav GlobalNav-lvl-1"> -->
 </nav>
 </div>
 </div>
 <!--googleon: index-->
-<div id="myModal" class="modal refreshableModal"  >
-<div class="modal-dialog">
-<div class="modal-content">
-</div>
-</div>
-</div>
-<div id="cs_control_5081890" class="cs_control CS_Element_Schedule" style="width:100%;"><div  title="" id="CS_Element_NPSHomepageContainer"><div id="gridRow_1_1_5081890" class="cs_GridRow"><div id="gridCol_1_1_1_1_5081890" class="cs_GridColumn"><div id="cs_control_5084465" class="cs_control  CS_Element_Custom">
-<style>
-.HeroHomepage {
-overflow: visible;
-}
-.Hero {
-position: relative;
-overflow: visible;
-}
-</style>
-<div id="HERO" class="HeroHomepage Hero">
-<div class="picturefill-background" style="background-image: url('/common/uploads/hero_home/pwr/promo/DA7EC96F-1DD8-B71B-0BC332D4E7765BB8.jpg?width=2400&height=700&mode=crop&quality=90');" role="img" aria-label="">
-<div class="container">
-<div class="row">
-<div class="col-sm-12">
-<span data-src="/common/uploads/hero_home/pwr/promo/DA7EC96F-1DD8-B71B-0BC332D4E7765BB8.jpg?width=1200&height=350&mode=crop&quality=90" data-media="(min-width: 1024px)"></span>
-<span data-src="/common/uploads/hero_home/pwr/promo/DA7EC96F-1DD8-B71B-0BC332D4E7765BB8.jpg?width=2400&height=700&mode=crop&quality=90" data-media="(min-width: 1024px) and (min-resolution: 144dppx)"></span>
-<span data-src="/common/uploads/hero_home/pwr/promo/DA7EC96F-1DD8-B71B-0BC332D4E7765BB8.jpg?width=2400&height=700&mode=crop&quality=90" data-media="(min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5)"></span>
-<span data-src="/common/uploads/hero_home/pwr/promo/DA7EC96F-1DD8-B71B-0BC332D4E7765BB8.jpg?width=2400&height=700&mode=crop&quality=90" data-media="(min-width: 1440px)"></span>
-<div class="HeroHomepage-content Hero-content -right">
-<span class="HeroHomepage-contentSubtitle">THE HEALTH BENEFITS OF PARKS</span>
-<h2 class="HeroHomepage-contentTitle">Healthy Parks Healthy People</h2>
-<a href="/planyourvisit/healthy-events.htm" class="button button-primary -green">Get Active</a>
-</div>
-</div>
-</div>
-</div>
-<div class="SearchBar StrataSearchBar">
-<div class="container">
-<div class="row">
-<div class="col-sm-12 col-md-10 col-md-push-1">
-<label class="StrataSearchBar-label" for="searchbar">Find a PARK</label>
-<div class="SearchBar-keywordSearch input-group input-group-lg" role="group">
-<button type="button" class="SearchBar-keywordSearch input-group input-group-lg btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-By State... <span class="caret"></span>
-</button>
-<!--populate state links here in this list-->
-<ul class="dropdown-menu SearchBar-keywordSearch" role="menu" style="max-height: 300px; overflow-y: auto; overflow-x: hidden;">
-<li><a href="/state/al/index.htm">Alabama</a></li><li><a href="/state/ak/index.htm">Alaska</a></li><li><a href="/state/as/index.htm">American Samoa</a></li><li><a href="/state/az/index.htm">Arizona</a></li><li><a href="/state/ar/index.htm">Arkansas</a></li><li><a href="/state/ca/index.htm">California</a></li><li><a href="/state/co/index.htm">Colorado</a></li><li><a href="/state/ct/index.htm">Connecticut</a></li><li><a href="/state/de/index.htm">Delaware</a></li><li><a href="/state/dc/index.htm">District of Columbia</a></li><li><a href="/state/fl/index.htm">Florida</a></li><li><a href="/state/ga/index.htm">Georgia</a></li><li><a href="/state/gu/index.htm">Guam</a></li><li><a href="/state/hi/index.htm">Hawaii</a></li><li><a href="/state/id/index.htm">Idaho</a></li><li><a href="/state/il/index.htm">Illinois</a></li><li><a href="/state/in/index.htm">Indiana</a></li><li><a href="/state/ia/index.htm">Iowa</a></li><li><a href="/state/ks/index.htm">Kansas</a></li><li><a href="/state/ky/index.htm">Kentucky</a></li><li><a href="/state/la/index.htm">Louisiana</a></li><li><a href="/state/me/index.htm">Maine</a></li><li><a href="/state/md/index.htm">Maryland</a></li><li><a href="/state/ma/index.htm">Massachusetts</a></li><li><a href="/state/mi/index.htm">Michigan</a></li><li><a href="/state/mn/index.htm">Minnesota</a></li><li><a href="/state/ms/index.htm">Mississippi</a></li><li><a href="/state/mo/index.htm">Missouri</a></li><li><a href="/state/mt/index.htm">Montana</a></li><li><a href="/state/ne/index.htm">Nebraska</a></li><li><a href="/state/nv/index.htm">Nevada</a></li><li><a href="/state/nh/index.htm">New Hampshire</a></li><li><a href="/state/nj/index.htm">New Jersey</a></li><li><a href="/state/nm/index.htm">New Mexico</a></li><li><a href="/state/ny/index.htm">New York</a></li><li><a href="/state/nc/index.htm">North Carolina</a></li><li><a href="/state/nd/index.htm">North Dakota</a></li><li><a href="/state/mp/index.htm">Northern Mariana Islands</a></li><li><a href="/state/oh/index.htm">Ohio</a></li><li><a href="/state/ok/index.htm">Oklahoma</a></li><li><a href="/state/or/index.htm">Oregon</a></li><li><a href="/state/pa/index.htm">Pennsylvania</a></li><li><a href="/state/pr/index.htm">Puerto Rico</a></li><li><a href="/state/ri/index.htm">Rhode Island</a></li><li><a href="/state/sc/index.htm">South Carolina</a></li><li><a href="/state/sd/index.htm">South Dakota</a></li><li><a href="/state/tn/index.htm">Tennessee</a></li><li><a href="/state/tx/index.htm">Texas</a></li><li><a href="/state/ut/index.htm">Utah</a></li><li><a href="/state/vt/index.htm">Vermont</a></li><li><a href="/state/vi/index.htm">Virgin Islands</a></li><li><a href="/state/va/index.htm">Virginia</a></li><li><a href="/state/wa/index.htm">Washington</a></li><li><a href="/state/wv/index.htm">West Virginia</a></li><li><a href="/state/wi/index.htm">Wisconsin</a></li><li><a href="/state/wy/index.htm">Wyoming</a></li>
-</ul>
-</div>
-<div class="AdvancedSearch" style="margin: 12px 0 -20px 0;">
-<p><a href="/findapark/index.htm">See All Parks & Search By Map</a></p>
-</div>
-</div>
-</div>
-</div>
-</div> <!--end Searchbar-->
-</div>
-</div>
-</div></div></div></div></div>
 <script type="text/javascript">
 jQuery(document).ready(function() {
 setTimeout( function() {
@@ -394,294 +171,263 @@ NPS.display.showAdminTools( 0 );
 </div>
 </div>
 <div id="adminTools"></div>
+<iframe id="iframe" src="/maps/embed.html?mapId=f0cc55f0-99a6-4be4-a4d8-b9cbdb5931db&state=MI#MI/parks" height="426"></iframe>
 <div class="container">
 <div class="ColumnGrid row">
 <div class="ColumnMain col-sm-12">
+<!--googleoff: index-->
+<div class="Breadcrumbs container">
 <div class="row">
 <div class="col-sm-12">
-<div id="cs_control_5107263" class="cs_control CS_Element_Schedule" style="width:100%;"><div  title="" id="CS_Element_homeContentContainer"><div id="gridRow_1_1_5107263" class="cs_GridRow"><div id="gridCol_1_1_1_1_5107263" class="cs_GridColumn"><div id="cs_control_5107265" class="cs_control  CS_Element_Custom">
-<div class="Component FeatureGrid">
-<div class="row">
-<div class="FeatureGrid-item col-xs-12">
-<div class="row">
-<div class="FeatureGrid-item col-xs-12 col-sm-4">
-<div class="Component Feature -small">
-<a href="/aboutus/news/severe-weather-response.htm" class="Feature-link" onclick="gas('send', 'event', 'Feature Grid - Prioritized', document.location.href, '/aboutus/news/severe-weather-response.htm', 1, true)">
-<div class="Feature-imageContainer">
-<img
-class="Feature-image"
-src="/common/uploads/grid_builder/pwr/crop16_9/1F737935-1DD8-B71B-0B6034A868DF3202.jpg?width=307&quality=90&mode=crop"
-alt="Two rangers next to a law enforcement SUV and speedboat ">
-<h3 class="Feature-title carrot-end">Severe Weather Response</h3>
-</div>
-</a>
-<p class="Feature-description">Find information and updates about National Park Service preparation and response to Hurricanes Harvey and Irma.</p>
-</div>
-</div>
-<div class="FeatureGrid-item col-xs-12 col-sm-4">
-<div class="Component Feature -small">
-<a href="/subjects/fossilday/index.htm" class="Feature-link" onclick="gas('send', 'event', 'Feature Grid - Prioritized', document.location.href, '/subjects/fossilday/index.htm', 1, true)">
-<div class="Feature-imageContainer">
-<img
-class="Feature-image"
-src="/common/uploads/grid_builder/pwr/crop16_9/B319EF0C-1DD8-B71B-0BC5FEE3DEB7F649.jpg?width=307&quality=90&mode=crop"
-alt="Hand holding up a fossilized saber tooth cat skull">
-<h3 class="Feature-title carrot-end">Diggin' National Fossil Day</h3>
-</div>
-</a>
-<p class="Feature-description">Join the fossil fun as parks, museums, and classrooms highlight the scientific and educational value of paleontology.</p>
-</div>
-</div>
-<div class="FeatureGrid-item col-xs-12 col-sm-4">
-<div class="Component Feature -small">
-<a href="/articles/getaway-frhi.htm" class="Feature-link" onclick="gas('send', 'event', 'Feature Grid - Prioritized', document.location.href, '/articles/getaway-frhi.htm', 1, true)">
-<div class="Feature-imageContainer">
-<img
-class="Feature-image"
-src="/common/uploads/grid_builder/pwr/crop16_9/B43B1CD0-1DD8-B71B-0BFB88EEAFC6ED2D.jpg?width=307&quality=90&mode=crop"
-alt="Crowd under white tents in front of the Gallatin House">
-<h3 class="Feature-title carrot-end">Getaway to Friendship Hill NHS</h3>
-</div>
-</a>
-<p class="Feature-description">In the rolling hills of western Pennsylvania, step back into the early days of the nation's history at the home of Albert Gallatin.</p>
+<ol id="breadcrumbs" style="display:none;" class="Breadcrumbs"></ol>
 </div>
 </div>
 </div>
+<div class="breadcrumbSourceContainer" style="display:none;">
+<div id="cs_control_5255284" class="cs_control  CS_Element_Custom"> </div>
 </div>
+<!--googleon: index-->
+<script>
+jQuery(document).ready(function() {
+//this is done manually because there isn't a nav on the state pages
+jQuery("ol#breadcrumbs").append('<li><a href="/">NPS.gov</a></li><li><a href="/findapark/index.htm">Find A Park</a></li><li>Michigan</li>').show();
+});
+</script>
+<div class="ContentHeader">
+<h1 class="page-title">Michigan</h1>
 </div>
 <div class="row">
-<div class="FeatureGrid-item col-xs-12">
-<div class="row">
-<div class="FeatureGrid-item col-xs-12 col-sm-4">
-<div class="Component Feature -small">
-<a href="/subjects/tellingallamericansstories/americanlatinoheritage.htm" class="Feature-link" onclick="gas('send', 'event', 'Feature Grid - Prioritized', document.location.href, '/subjects/tellingallamericansstories/americanlatinoheritage.htm', 1, true)">
-<div class="Feature-imageContainer">
-<img
-class="Feature-image"
-src="/common/uploads/grid_builder/pwr/crop16_9/D5AD8E9B-1DD8-B71B-0B30E1E7EAAD8283.jpg?width=307&quality=90&mode=crop"
-alt="Anza Expedition reenactors on horseback">
-<h3 class="Feature-title carrot-end">Sharing Traditions and Heritage </h3>
+<div class="col-sm-12">
+<div id="state_wrapper">
+<div class="col-md-9 col-sm-12 col-xs-12 stateCol">
+<div class="stateParkList"><h2 class="Tag -green">Parks</h2></div>
+<div id="parkListResults">
+<div id="parkListResultsArea">
+<ul id="list_parks">
+<li class="clearfix" id="asset_isro">
+<div class="col-md-9 col-sm-9 col-xs-12 table-cell list_left">
+<h2>National Park</h2>
+<h3><a href="/isro/">Isle Royale</a></h3>
+<h4>Houghton, MI</h4>
+<p>
+Explore a rugged, isolated island, far from the sights and sounds of civilization. Surrounded by Lake Superior, Isle Royale offers unparalleled solitude and adventures for backpackers, hikers, boaters, kayakers, canoeists and scuba divers. Here, amid stunning scenic beauty, you'll find opportunities for reflection and discovery, and make memories that last a lifetime.
+</p>
 </div>
-</a>
-<p class="Feature-description">In honor of Hispanic Heritage Month, explore the history, culture, and contributions of Hispanic and Latino peoples.</p>
+<div class="col-md-3 col-sm-3 col-xs-12 result-details-container table-cell list_right">
+<div class="col-md-12 col-sm-12 col-xs-6 noPadding stateThumbnail">
+<img class="stateResultImage" src="/customcf/apps/CMS_HandF/ParkSearchPics/1C216C74-1DD8-B71C-0EA64C8BA1D75EB8.jpg" alt="A mid-afternoon veiw down the expanse of Isle Royale National Park.  Photo taken from the Mount Ojibway Fire Tower." border="0" />
 </div>
-</div>
-<div class="FeatureGrid-item col-xs-12 col-sm-4">
-<div class="Component Feature -small">
-<a href="/subjects/arts/stories.htm" class="Feature-link" onclick="gas('send', 'event', 'Feature Grid - Prioritized', document.location.href, '/subjects/arts/stories.htm', 1, true)">
-<div class="Feature-imageContainer">
-<img
-class="Feature-image"
-src="/common/uploads/grid_builder/pwr/crop16_9/7A128F96-1DD8-B71B-0B7057427F7AC27C.jpg?width=307&quality=90&mode=crop"
-alt="Woman painting a landscape">
-<h3 class="Feature-title carrot-end">Find Your Muse</h3>
-</div>
-</a>
-<p class="Feature-description">Artists find inspiration for their craft in the rich nature, culture, and history preserved in national parks.</p>
-</div>
-</div>
-<div class="FeatureGrid-item col-xs-12 col-sm-4">
-<div class="Component Feature -small">
-<a href="/subjects/tellingallamericansstories/lgbtqheritage.htm" class="Feature-link" onclick="gas('send', 'event', 'Feature Grid - Prioritized', document.location.href, '/subjects/tellingallamericansstories/lgbtqheritage.htm', 1, true)">
-<div class="Feature-imageContainer">
-<img
-class="Feature-image"
-src="/common/uploads/grid_builder/pwr/crop16_9/E7DA3E30-1DD8-B71B-0BBFBB472A5126F6.jpg?width=307&quality=90&mode=crop"
-alt="Stonewall Inn">
-<h3 class="Feature-title carrot-end">Telling the History of All</h3>
-</div>
-</a>
-<p class="Feature-description">Discover stories and places that tell the contributions of the LGBTQ community to the nation's history.</p>
+<div class="col-md-12 col-sm-12  noPadding stateListLinks" >
+<ul>
+<li><a href="http://www.nps.gov/isro/planyourvisit/conditions.htm"> Alerts & Conditions<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/isro/planyourvisit/basicinfo.htm"> Basic Information<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/isro/planyourvisit/calendar.htm"> Calendar<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/isro/planyourvisit/maps.htm"> Maps<span class="hidden-xs"> »</span></a></li>
+</ul>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<style>
-.PromoLogo { min-height:320px; }
-/* .PromoLogo > img { height: 130px; } */
-</style>
-<div class="row">
-<div class="FeatureGrid-item col-sm-12">
-<div class="row">
-<div class="FeatureGrid-item col-xs-12 col-sm-4">
-<div class="Component Feature -small">
-<a href="/aboutus/news/index.htm" class="Feature-link" >
-<div class="Feature-imageContainer">
-<img
-class="Feature-image"
-src="/common/commonspot/templates/images/promos/newsFeature.jpg?width=307&quality=90&mode=crop"
-alt="Park ranger talking to news reporter">
-<h3 class="Feature-title carrot-end">National Park News</h3>
-</div>
-</a>
-<p class="Feature-description">Find the latest news and events, search for images and videos, and discover facts and figures about the national parks.</p>
-</div>
-</div>
-<div class="FeatureGrid-item col-xs-12 col-sm-4">
-<div class="Component Feature -small">
-<a href="/media/multimedia-search.htm" class="Feature-link" >
-<div class="Feature-imageContainer">
-<img
-class="Feature-image"
-src="/common/commonspot/templates/images/promos/Homepage_PhotoFeature.jpg?width=307&quality=90&mode=crop"
-alt="Close-up of woman looking through a camera viewfinder at woods">
-<h3 class="Feature-title carrot-end">Photos, Videos, Webcams & More</h3>
-</div>
-</a>
-<p class="Feature-description">Explore the national parks through multimedia. Search for photos, videos, webcams, and audio files on any topic.</p>
-</div>
-</div>
-<div class="FeatureGrid-item col-xs-12 col-sm-4">
-<div class="PromoLogo picturefill-background">
-<span data-src="/common/commonspot/templates/images/promos/npf-blue-bg.jpg"></span>
-<span data-src="/common/commonspot/templates/images/promos/npf-blue-bg.jpg" data-media="(min-width: 320px, min-resolution: 144dppx)"></span>
-<span data-src="/common/commonspot/templates/images/promos/npf-blue-bg.jpg" data-media="(min-width: 320px, -webkit-min-device-pixel-ratio: 1.5)"></span>
-<span data-src="/common/commonspot/templates/images/promos/npf-blue-bg.jpg" data-media="(min-width: 640px)"></span>
-<span data-src="/common/commonspot/templates/images/promos/npf-blue-bg.jpg" data-media="(min-width: 980px, min-resolution: 144dppx)"></span>
-<span data-src="/common/commonspot/templates/images/promos/npf-blue-bg.jpg" data-media="(min-width: 980px, -webkit-min-device-pixel-ratio: 1.5)"></span>
-<img src="/common/commonspot/templates/images/promos/npf-white.png" alt="" class="PromoLogo-image">
-<p class="PromoLogo-text">The national park community welcomes you! Together we can celebrate these special places and ensure they exist forever.</p>
-<a href="http://www.nationalparks.org/get-email-updates" class="PromoLogo-cta btn btn-primary -black"  data-track='{"type":"event","category":"Navigate","action":"#","label":"Promo Logo"}'>Subscribe</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<br /><br />
-</div><div id="cs_control_5107276" class="cs_control  CS_Element_CustomCF"><div id="CS_CCF_5102204_5107276">
-<noscript>
-<style>
-#SiteSectionLinks .picturefill-background {
-background-image: url(/common/commonspot/templates/images/promos/GLAC1_Sunset_TimRains_960.jpg);
-background-size: cover;
-background-repeat: no-repeat;
-background-position: 50% 50%;
-}
-</style>
-</noscript>
-<div id="SiteSectionLinks" class="SiteSectionLinks picturefill-background">
-<!--[if IE 8]>
-<img class="SiteSectionLinks-legacyImage" src="/common/commonspot/templates/images/promos/GLAC1_Sunset_TimRains_960.jpg" alt="FIX_ME: hero alternate text">
-<![endif]-->
-<span data-src="/common/commonspot/templates/images/promos/GLAC1_Sunset_TimRains_960.jpg"></span>
-<span data-src="/common/commonspot/templates/images/promos/GLAC1_Sunset_TimRains_960.jpg" data-media="(min-width: 320px, min-resolution: 144dppx)"></span>
-<span data-src="/common/commonspot/templates/images/promos/GLAC1_Sunset_TimRains_960.jpg" data-media="(min-width: 320px, -webkit-min-device-pixel-ratio: 1.5)"></span>
-<span data-src="/common/commonspot/templates/images/promos/GLAC1_Sunset_TimRains_960.jpg" data-media="(min-width: 640px)"></span>
-<span data-src="/common/commonspot/templates/images/promos/GLAC1_Sunset_TimRains_960.jpg" data-media="(min-width: 980px, min-resolution: 144dppx)"></span>
-<span data-src="/common/commonspot/templates/images/promos/GLAC1_Sunset_TimRains_960.jpg" data-media="(min-width: 980px, -webkit-min-device-pixel-ratio: 1.5)"></span>
-<div class="SiteSectionLinks-container container" style="padding: 20px 0 70px;">
-<div class="row">
-<h2 class="SiteSectionLinks-title">Discover America's Story: The National Parks</h2>
-<ul class="SiteSectionLinks-links">
-<li class="SiteSectionLinks-link">
-<a href="/planyourvisit/index.htm" ><span>Plan Your Visit</span>
-<svg class="icon" role="img" focusable="false" hidefocus="true" title="play"><use xlink:href="/common/commonspot/templates/images/icons/sprite.symbol.svg#compass"></use></svg>
-</a>
 </li>
-<li class="SiteSectionLinks-link">
-<a href="/learnandexplore/index.htm" ><span>Learn & explore</span>
-<svg class="icon" role="img" focusable="false" hidefocus="true" title="play"><use xlink:href="/common/commonspot/templates/images/icons/sprite.symbol.svg#hiking"></use></svg>
-</a>
+<li class="clearfix" id="asset_kewe">
+<div class="col-md-9 col-sm-9 col-xs-12 table-cell list_left">
+<h2>National Historical Park</h2>
+<h3><a href="/kewe/">Keweenaw</a></h3>
+<h4>Calumet, MI</h4>
+<p>
+From 7,000 years ago to the 1900s people mined Keweenaw copper. Native peoples made copper into tools and trade items. Investors and immigrants arrived in the 1800s in a great mineral rush, developing thriving industries and cosmopolitan communities. Though the mines have since closed, their mark is still visible on the land and people.
+</p>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-12 result-details-container table-cell list_right">
+<div class="col-md-12 col-sm-12 col-xs-6 noPadding stateThumbnail">
+<img class="stateResultImage" src="/customcf/apps/CMS_HandF/ParkSearchPics/9D7EC33C-EB0F-1B0D-2F8A261B4355CAA4.jpg" alt="Across the Keweenaw copper was king. " border="0" />
+</div>
+<div class="col-md-12 col-sm-12  noPadding stateListLinks" >
+<ul>
+<li><a href="http://www.nps.gov/kewe/planyourvisit/conditions.htm"> Alerts & Conditions<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/kewe/planyourvisit/basicinfo.htm"> Basic Information<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/kewe/planyourvisit/calendar.htm"> Calendar<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/kewe/planyourvisit/maps.htm"> Maps<span class="hidden-xs"> »</span></a></li>
+</ul>
+</div>
+</div>
 </li>
-<li class="SiteSectionLinks-link">
-<a href="/getinvolved/index.htm" ><span>Get Involved</span>
-<svg class="icon" role="img" focusable="false" hidefocus="true" title="play"><use xlink:href="/common/commonspot/templates/images/icons/sprite.symbol.svg#handshake"></use></svg>
-</a>
+<li class="clearfix" id="asset_auto">
+<div class="col-md-9 col-sm-9 col-xs-12 table-cell list_left">
+<h2>National Heritage Area</h2>
+<h3><a href="/auto/">Motor Cities</a></h3>
+<h4>Detroit, MI</h4>
+<p>
+If you are interested in automotive history, then MotorCities National Heritage Area is the place to be. Tour the factory where Henry Ford created and built the Model T. Learn the stories behind the creation of General Motors and DamilerChrysler. Come with us and learn about the long and sometimes tenuous relationship between Labor and Industry while experiencing southeast Michigan.
+</p>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-12 result-details-container table-cell list_right">
+<div class="col-md-12 col-sm-12 col-xs-6 noPadding stateThumbnail">
+<img class="stateResultImage" src="/customcf/apps/CMS_HandF/ParkSearchPics/2813D083-1DD8-B71B-0B831B59A7205A9D.jpg" alt="MotorCites National Heritage Area" border="0" />
+</div>
+<div class="col-md-12 col-sm-12  noPadding stateListLinks" >
+<ul>
+<li><a href="http://www.nps.gov/auto/planyourvisit/conditions.htm"> Alerts & Conditions<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/auto/planyourvisit/basicinfo.htm"> Basic Information<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/auto/planyourvisit/calendar.htm"> Calendar<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/auto/planyourvisit/maps.htm"> Maps<span class="hidden-xs"> »</span></a></li>
+</ul>
+</div>
+</div>
+</li>
+<li class="clearfix" id="asset_noco">
+<div class="col-md-9 col-sm-9 col-xs-12 table-cell list_left">
+<h2>National Scenic Trail</h2>
+<h3><a href="/noco/">North Country</a></h3>
+<h4>Seven States-New York to North Dakota , MI,MN,ND,NY,OH,PA,WI</h4>
+<p>
+Come to the North Country. Trek the hills and valleys. Lakes and streams remain from glaciers that molded the landscape 10,000 years before. Experience clear-flowing water, the red and gold of autumn, a fairyland of snow, tall grass prairies, and distant horizons. From New York to North Dakota, you're never far from a great outdoor adventure. Experience your America at a walking pace.
+</p>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-12 result-details-container table-cell list_right">
+<div class="col-md-12 col-sm-12 col-xs-6 noPadding stateThumbnail">
+<img class="stateResultImage" src="/customcf/apps/CMS_HandF/ParkSearchPics/ECC19A52-1DD8-B71C-0E27B3B8FE5265EC.jpg" alt="A hiker enjoys the view along the North Country Trail in New York." border="0" />
+</div>
+<div class="col-md-12 col-sm-12  noPadding stateListLinks" >
+<ul>
+<li><a href="http://www.nps.gov/noco/planyourvisit/conditions.htm"> Alerts & Conditions<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/noco/planyourvisit/basicinfo.htm"> Basic Information<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/noco/planyourvisit/calendar.htm"> Calendar<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/noco/planyourvisit/maps.htm"> Maps<span class="hidden-xs"> »</span></a></li>
+</ul>
+</div>
+</div>
+</li>
+<li class="clearfix" id="asset_piro">
+<div class="col-md-9 col-sm-9 col-xs-12 table-cell list_left">
+<h2>National Lakeshore</h2>
+<h3><a href="/piro/">Pictured Rocks</a></h3>
+<h4>Munising, Grand Marais, MI</h4>
+<p>
+Sandstone cliffs, beaches, sand dunes, waterfalls, lakes, forest, and shoreline beckon you to visit Pictured Rocks National Lakeshore. Hiking, camping, sightseeing, and four season outdoor opportunities abound. The lakeshore hugs the Lake Superior shoreline for more than 40 miles. Lake Superior is the largest, deepest, coldest, and most pristine of all the Great Lakes.
+</p>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-12 result-details-container table-cell list_right">
+<div class="col-md-12 col-sm-12 col-xs-6 noPadding stateThumbnail">
+<img class="stateResultImage" src="/customcf/apps/CMS_HandF/ParkSearchPics/131FD88E-1DD8-B71C-0E5178A32225C758.jpg" alt="The Pictured Rocks and Lake Superior. Photo © Craig Blacklock" border="0" />
+</div>
+<div class="col-md-12 col-sm-12  noPadding stateListLinks" >
+<ul>
+<li><a href="http://www.nps.gov/piro/planyourvisit/basicinfo.htm"> Basic Information<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/piro/planyourvisit/calendar.htm"> Calendar<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/piro/planyourvisit/conditions.htm"> Current Conditions<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/piro/planyourvisit/maps.htm"> Maps<span class="hidden-xs"> »</span></a></li>
+</ul>
+</div>
+</div>
+</li>
+<li class="clearfix" id="asset_rira">
+<div class="col-md-9 col-sm-9 col-xs-12 table-cell list_left">
+<h2>National Battlefield Park</h2>
+<h3><a href="/rira/">River Raisin</a></h3>
+<h4>MI</h4>
+<p>
+River Raisin National Battlefield Park preserves, commemorates, and interprets the January 1813 battles of the War of 1812 and their aftermath in Monroe and Wayne counties in SE Michigan. The Battle resulted in the greatest victory for Tecumseh’s American Indian confederation and the greatest defeat for the U.S. The resulting rally cry “Remember the Raisin” spurred support for the rest of the war.
+</p>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-12 result-details-container table-cell list_right">
+<div class="col-md-12 col-sm-12 col-xs-6 noPadding stateThumbnail">
+<img class="stateResultImage" src="/customcf/apps/CMS_HandF/ParkSearchPics/873BF441-1DD8-B71C-0E392B4691D6189D.jpg" alt="Painting of Frenchtown settlement" border="0" />
+</div>
+<div class="col-md-12 col-sm-12  noPadding stateListLinks" >
+<ul>
+<li><a href="http://www.nps.gov/rira/planyourvisit/conditions.htm"> Alerts & Conditions<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/rira/planyourvisit/basicinfo.htm"> Basic Information<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/rira/planyourvisit/calendar.htm"> Calendar<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/rira/planyourvisit/maps.htm"> Maps<span class="hidden-xs"> »</span></a></li>
+</ul>
+</div>
+</div>
+</li>
+<li class="clearfix" id="asset_slbe">
+<div class="col-md-9 col-sm-9 col-xs-12 table-cell list_left">
+<h2>National Lakeshore</h2>
+<h3><a href="/slbe/">Sleeping Bear Dunes</a></h3>
+<h4>Empire, MI</h4>
+<p>
+Miles of sand beach, bluffs that tower 450’ above Lake Michigan, lush forests, clear inland lakes, unique flora and fauna make up the natural world of Sleeping Bear Dunes. High dunes afford spectacular views across the lake. An island lighthouse, US Life-Saving Service stations, coastal villages, and picturesque farmsteads reflect the park’s rich maritime, agricultural, and recreational history.
+</p>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-12 result-details-container table-cell list_right">
+<div class="col-md-12 col-sm-12 col-xs-6 noPadding stateThumbnail">
+<img class="stateResultImage" src="/customcf/apps/CMS_HandF/ParkSearchPics/6DCF050D-043A-4F59-789BB02A9EED07EE.jpg" alt="Kayaking Lake Michigan" border="0" />
+</div>
+<div class="col-md-12 col-sm-12  noPadding stateListLinks" >
+<ul>
+<li><a href="http://www.nps.gov/slbe/planyourvisit/basicinfo.htm"> Basic Information<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/slbe/planyourvisit/calendar.htm"> Calendar<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/slbe/planyourvisit/conditions.htm"> Current Conditions<span class="hidden-xs"> »</span></a></li>
+<li><a href="http://www.nps.gov/slbe/planyourvisit/maps.htm"> Maps<span class="hidden-xs"> »</span></a></li>
+</ul>
+</div>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<br /><br />
-</div></div><div id="cs_control_5107266" class="cs_control  CS_Element_Custom"><div class="Component text-content-size text-content-style ArticleTextGroup">
-<figure class="-auto-width">
-<a href="http://findyourpark.com/">
-<img
-alt="Statue of Liberty&#39;s crown with Find Your Park text superimposed"
-title="Statue of Liberty&#39;s crown with Find Your Park text superimposed"
-src="/images/FYP_ETP_STLI.png"
->
-</a>
-</figure>
-</div></div></div></div></div></div>
+<h2  class="Tag -black">By The Numbers</h2>
+<div class="col-md-3 col-sm-12 col-xs-12 stateCol stateCol-right">
+<div id="cs_control_4083830" class="cs_control ">
+<div id="list_numbers">
+<a name="numbers"></a>
+<script>
+jQuery(document).ready(function(){
+var deviceAgent = navigator.userAgent.toLowerCase();
+var iOSAgent = deviceAgent.match(/(iphone|ipod|ipad)/);
+jQuery(".disclaimer").each(function(){
+jQuery(this).attr("title", "This figure is based on the number of official National Park Service units in the state. The sites shown on this page may also include sites affiliated with or managed by the National Park Service.");
+jQuery(this).tooltip(); // Bootstrap tooltip, NOT jQueryUI tooltip
+jQuery(this).on('show.bs.tooltip', function () {
+jQuery(document).data("tooltipShowing", true);
+});
+jQuery(this).on('hide.bs.tooltip', function () {
+jQuery(document).data("tooltipShowing", false);
+});
+});
+// Check onClick event of "container" class to see if a tooltip is open.
+// If so, close it: iOS touch hack
+if (iOSAgent) {
+// mobile code here
+jQuery(".container").bind('click',function() {
+if(jQuery(document).data("tooltipShowing") == true){
+jQuery(".disclaimer").tooltip("hide");
+}
+});
+}
+});
+</script>
+<ul class="state_numbers">
+<li><strong>5</strong> National Parks <a class="disclaimer" href="javascript:void(0)"><i class="fa fa-question-circle"></i></a></li> <li><strong>2,660,399</strong> Visitors to National Parks</li> <li><a href="http://nature.nps.gov/socialscience/vse.cfm"><strong>$2</strong> Economic Benefit from National Park Tourism »</a></li> <li><a href="/tps/tax-incentives.htm"><strong>$2</strong> of Rehabilitation Projects Stimulated by Tax Incentives (since 1995) »</a></li> <li><a href="/lwcf/"><strong>$1</strong> of Land &amp; Water Conservation Fund Appropriated for Projects (since 1965) »</a></li> <li><a href="/clg/"><strong>30</strong> Certified Local Governments »</a></li> <li><a href="/ncrc/programs/rtca/"><strong>81</strong> Community Conservation &amp; Recreation Projects (since 1987) »</a></li> <li><a href="/flp/"><strong>4,504</strong> Acres Transferred by Federal Lands to Parks for Local Parks and Recreation (since 1948) »</a></li> <li><a href="/getinvolved/volunteer.htm"><strong>216,198</strong> Hours Donated by Volunteers »</a></li> <li><a href="/subjects/heritageareas/discover-nhas.htm#mi"><strong>1</strong> National Heritage Area »</a></li> <li><a href="/nts/"><strong>1</strong> National Trails Managed by NPS »</a></li> <li><a href="/nr/"><strong>1,902</strong> National Register of Historic Places Listings »</a></li> <li><a href="/nhl/"><strong>42</strong> National Historic Landmarks »</a></li> <li><a href="https://nature.nps.gov/nnl/"><strong>12</strong> National Natural Landmarks »</a></li> <li><a href="/hdp/"><strong>633</strong> Places Recorded by Heritage Documentation Programs »</a></li> <li><a href="/museum/"><strong>2,717,877</strong> Objects in National Park Museum Collections »</a></li> <li><a href="/archeology/"><strong>475</strong> Archeological Sites in National Parks »</a></li> <li><a href="/subjects/teachingwithhistoricplaces/index.htm"><strong>1</strong> Teaching with Historic Places Lesson Plan »</a></li> <li><a href="/subjects/heritagetravel/discover-our-shared-heritage.htm"><strong>4</strong> Discover Our Shared Heritage Travel Itineraries »</a></li>
+<li class="numbers_download clearfix"><img src="/state/templates/images/buttons/download_numbers.png" alt="Download numbers" /><a href="/state/customcf/bythenumbers/mi.pdf"> Download the summary »</a></li>
+</ul>
+</div>
+</div>
+<p id="list_disclaimer">These numbers are just a sample of the National Park Service's work. Figures are for the fiscal year that ended 9/30/2016.</p>
+<div id="list_numbers" class="more_info clearfix">
+<h2 style="font-family:Open Sans Condensed; font-size:1.4em;">MORE INFORMATION</h2>
+<ul class="state_numbers">
+<li><a href="/planyourvisit/alerts.htm?s=MI">Alerts</a></li>
+<li><a href="/findapark/event-search.htm?states_filter=MI">Events</a></li>
+<li><a href="/media/multimedia-search.htm?q=Michigan">Photos & Multimedia</a></li>
+<li><a href="/media/article-search.htm?q=Michigan">Articles</a></li>
+<li><a href="/news/index.htm">Nationwide News</a></li>
+<li><a href="/findapark/passes.htm">Get Your America the Beautiful Pass!</a></li>
+<li><a href="/aboutus/workwithus.htm">Work With Us</a></li>
+</ul>
+</div>
+</div>
+</div>
 </div><!-- col-sm-12 -->
 </div><!-- row -->
 </div><!-- ColumnMain col-sm-9 -->
 </div><!-- ColumnGrid row -->
+<p> </p>
 </div><!-- end container -->
-<div class="container">
-<div class="ColumnGrid row">
-<div class="ColumnMain col-sm-12">
-<div class="row">
-<div class="col-sm-12 text-content-size text-content-style">
-<p style="text-align:right;">Last updated: October 4, 2017</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="cs_control_828654" class="cs_control  CS_Element_Custom">
-<div class="ContentPromos -left container-fluid">
-<div class="ContentPromos-container">
-<div class="row">
-<div class="ContentPromos-column col-xs-12 col-sm-6 col-md-3">
-<div id="ContentPromo-1" class="Component ContentPromo" role="img" aria-label="Martin Luther King Jr statue">
-<a class="ContentPromo-link picturefill-background" href="/history/index.htm" onclick="gas('send', 'event', 'Content Promo', document.location.href, '/history/index.htm', 1, true);">
-<span data-src="/common/uploads/grid_builder/pwr/crop1_1/15192BAC-1DD8-B71B-0B9B5E738A5D3E00.jpg?width=380&height=380&mode=crop&quality=90"></span>
-<span data-src="/common/uploads/grid_builder/pwr/crop1_1/15192BAC-1DD8-B71B-0B9B5E738A5D3E00.jpg?width=640&height=640&mode=crop&quality=90" data-media="min-resolution: 144dppx)"></span>
-<span data-src="/common/uploads/grid_builder/pwr/crop1_1/15192BAC-1DD8-B71B-0B9B5E738A5D3E00.jpg?width=640&height=640&mode=crop&quality=90" data-media="-webkit-min-device-pixel-ratio: 1.5)"></span>
-<span class="ContentPromo-text">
-<span class="ContentPromo-subtitle">Stories of Places & People</span>
-<span class="ContentPromo-title">Discover History</span>
-</span>
-</a>
-</div>
-</div>
-<div class="ContentPromos-column col-xs-12 col-sm-6 col-md-3">
-<div id="ContentPromo-2" class="Component ContentPromo" role="img" aria-label="Hand holding a compass on a mountain summit">
-<a class="ContentPromo-link picturefill-background" href="/nature/index.htm" onclick="gas('send', 'event', 'Content Promo', document.location.href, '/nature/index.htm', 1, true);">
-<span data-src="/common/uploads/grid_builder/pwr/crop1_1/14F14B05-1DD8-B71B-0B0D2E6494C7718B.jpg?width=380&height=380&mode=crop&quality=90"></span>
-<span data-src="/common/uploads/grid_builder/pwr/crop1_1/14F14B05-1DD8-B71B-0B0D2E6494C7718B.jpg?width=640&height=640&mode=crop&quality=90" data-media="min-resolution: 144dppx)"></span>
-<span data-src="/common/uploads/grid_builder/pwr/crop1_1/14F14B05-1DD8-B71B-0B0D2E6494C7718B.jpg?width=640&height=640&mode=crop&quality=90" data-media="-webkit-min-device-pixel-ratio: 1.5)"></span>
-<span class="ContentPromo-text">
-<span class="ContentPromo-subtitle">Protecting the Natural World</span>
-<span class="ContentPromo-title">Explore Nature</span>
-</span>
-</a>
-</div>
-</div>
-<div class="ContentPromos-column col-xs-12 col-sm-6 col-md-3">
-<div id="ContentPromo-3" class="Component ContentPromo" role="img" aria-label="Girl posing with junior ranger hat on">
-<a class="ContentPromo-link picturefill-background" href="/kids/index.cfm" onclick="gas('send', 'event', 'Content Promo', document.location.href, '/kids/index.cfm', 1, true);">
-<span data-src="/common/uploads/grid_builder/pwr/crop1_1/153930E2-1DD8-B71B-0B0DC802FD2E3A55.jpg?width=380&height=380&mode=crop&quality=90"></span>
-<span data-src="/common/uploads/grid_builder/pwr/crop1_1/153930E2-1DD8-B71B-0B0DC802FD2E3A55.jpg?width=640&height=640&mode=crop&quality=90" data-media="min-resolution: 144dppx)"></span>
-<span data-src="/common/uploads/grid_builder/pwr/crop1_1/153930E2-1DD8-B71B-0B0DC802FD2E3A55.jpg?width=640&height=640&mode=crop&quality=90" data-media="-webkit-min-device-pixel-ratio: 1.5)"></span>
-<span class="ContentPromo-text">
-<span class="ContentPromo-subtitle">Every Kid in a Park</span>
-<span class="ContentPromo-title">For Kids</span>
-</span>
-</a>
-</div>
-</div>
-<div class="ContentPromos-column col-xs-12 col-sm-6 col-md-3">
-<div id="ContentPromo-4" class="Component ContentPromo" role="img" aria-label="Three teachers studying buds on tree">
-<a class="ContentPromo-link picturefill-background" href="/teachers/index.htm" onclick="gas('send', 'event', 'Content Promo', document.location.href, '/teachers/index.htm', 1, true);">
-<span data-src="/common/uploads/grid_builder/pwr/crop1_1/1527DB7C-1DD8-B71B-0B6A5091BCBDDA99.jpg?width=380&height=380&mode=crop&quality=90"></span>
-<span data-src="/common/uploads/grid_builder/pwr/crop1_1/1527DB7C-1DD8-B71B-0B6A5091BCBDDA99.jpg?width=640&height=640&mode=crop&quality=90" data-media="min-resolution: 144dppx)"></span>
-<span data-src="/common/uploads/grid_builder/pwr/crop1_1/1527DB7C-1DD8-B71B-0B6A5091BCBDDA99.jpg?width=640&height=640&mode=crop&quality=90" data-media="-webkit-min-device-pixel-ratio: 1.5)"></span>
-<span class="ContentPromo-text">
-<span class="ContentPromo-subtitle">America’s Classrooms</span>
-<span class="ContentPromo-title">For Teachers</span>
-</span>
-</a>
-</div>
-</div>
-</div><!-- row -->
-</div><!-- ContentPromos-container -->
-</div>
-</div>
+<div id="cs_control_828654" class="cs_control  CS_Element_Custom"> </div>
 </div><!-- end of <div main> -->
 <!--googleoff: index-->
 <footer id="GlobalFooter" class="GlobalFooter">
@@ -848,7 +594,7 @@ document.getElementsByTagName("head")[0].appendChild(script);
 </body>
 </html>
 <!-- beg (1) PrimaryResources -->
-<script type="text/javascript" src="/commonspot/javascript/lightbox/overrides.js"></script><script type="text/javascript" src="/commonspot/javascript/lightbox/window_ref.js"></script><script type="text/javascript" src="/commonspot/pagemode/always-include-common.js"></script>
+<script type="text/javascript" src="/commonspot/javascript/lightbox/overrides.js"></script><script type="text/javascript" src="/commonspot/javascript/lightbox/window_ref.js"></script><script type="text/javascript" src="/commonspot/pagemode/always-include-common.js"></script><script type="text/javascript" src="/commonspot/pagemode/always-include-ns.js"></script>
 <!-- end (1) PrimaryResources -->
 <!-- beg (2) SecondaryResources -->
 <script type="text/javascript" src="/ADF/thirdParty/jquery/cookie/jquery.cookie.js"></script>
@@ -871,13 +617,13 @@ if(!commonspot)
 commonspot.csPage = {};
 
 
-	commonspot.csPage.url = '/index.htm';
+	commonspot.csPage.url = '/state/mi/index.htm';
 
 
-commonspot.csPage.id = 5102204;
+commonspot.csPage.id = 4085661;
 
 commonspot.csPage.siteRoot = '/';
-commonspot.csPage.subsiteRoot = '/';
+commonspot.csPage.subsiteRoot = '/state/mi/';
 
 
 // -->

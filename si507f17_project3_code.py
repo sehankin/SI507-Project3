@@ -52,6 +52,7 @@ except:
     nps_gov_file.write(html)
     nps_gov_file.close()
 
+nps_gov_soup = BeautifulSoup(html, "html.parser")
 state_list = ["Arkansas", "California", "Michigan"]
 for state in state_list:
     state_str_lc = state.lower()
@@ -63,19 +64,6 @@ for state in state_list:
         html = state_data_file.read()
         state_data_file.close()
     except:
-        # refactor this try/except block? (repeats lines 43-53)
-        try:
-            nps_gov_file = open("nps_gov_data.html", "r")
-            html = nps_gov_file.read()
-            nps_gov_file.close()
-        except:
-            nps_gov_home = "https://www.nps.gov/index.htm"
-            response = requests.get(nps_gov_home)
-            html = response.text
-            nps_gov_file = open("nps_gov_data.html", "w")
-            nps_gov_file.write(html)
-            nps_gov_file.close()
-        nps_gov_soup = BeautifulSoup(html, "html.parser")
         dropdown_class = "dropdown-menu SearchBar-keywordSearch"
         dropdown = nps_gov_soup.find("ul", {"class": dropdown_class})
         dropdown_states = dropdown.find_all("li")
@@ -84,8 +72,8 @@ for state in state_list:
             state_link_text = state_link.text
             if state_link_text == state:
                 state_link_href = state_link.get("href")
-                nps_gov_home = "https://www.nps.gov/index.htm"
-                nps_state = nps_gov_home + state_link_href
+                nps_gov_prefix = "https://www.nps.gov"
+                nps_state = nps_gov_prefix + state_link_href
                 response = requests.get(nps_state)
                 html = response.text
                 nps_state_file = open(state_data_html, "w")
