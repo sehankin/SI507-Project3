@@ -63,6 +63,7 @@ for state in state_list:
         html = state_data_file.read()
         state_data_file.close()
     except:
+        # refactor this try/except block? (repeats lines 43-53)
         try:
             nps_gov_file = open("nps_gov_data.html", "r")
             html = nps_gov_file.read()
@@ -93,53 +94,59 @@ for state in state_list:
 
 # PART 2
 
-# Before truly embarking on Part 2, we recommend you do two things:
 
-# 1. Create BeautifulSoup objects out of all the data you have access to
-#       in variables from Part 1
-# 2. Do some investigation on those BeautifulSoup objects.
-#       What data do you have about each state? How is it organized in HTML?
+class NationalSite(object):
+    def __init__(self, site_soup):
+        self.name = site_soup.find("h3").find("a").text
+        self.location = site_soup.find("h4").text
+        if site_soup.find("h2").text:
+            self.type = site_soup.find("h2").text
+        else:
+            self.type = None
+        if site_soup.find("p").text:
+            self.description = site_soup.find("p").text
+        else:
+            self.description = ""
+        all_links = site_soup.find_all("a")
+        for link in all_links:
+            if "basicinfo" in link.get("href"):
+                    basic_info_link = link.get("href")
+        self.basic_info_link = basic_info_link
 
-# HINT: remember the method .prettify() on a BeautifulSoup object --
-# might be useful for your investigation!
-# So, of course, might be .find or .find_all, etc...
+    def __str__(self):
+        return self.name + " | " + self.location
 
-# HINT: Remember that the data you saved is data that includes ALL
-# of the parks/sites/etc in a certain state, but you want the class
-# to represent just ONE park/site/monument/lakeshore.
+    def __contains__(self, input_str):
+        return input_str in self.name
 
-# We have provided, in sample_html_of_park.html an HTML file that represents
-# the HTML about 1 park. However, your code should rely upon HTML data about
-# Michigan, Arkansas, and Califoria you saved and accessed in Part 1.
-
-# However, to begin your investigation and begin
-# to plan your class definition, you may want to open this file
-# and create a BeautifulSoup instance of it to do investigation on.
-
-# Remember that there are things you'll have to be careful about listed in
-# the instructions -- e.g. if no type of park/site/monument is listed in input,
-# one of your instance variables should have a None value...
-
-
-
-
-
-# Define your class NationalSite here:
-
-
-
-
-
-# Recommendation: to test the class, at various points, uncomment
-# the following code and invoke some of the methods / check out the
-# instance variables of the test instance saved in the variable sample_inst:
-
-# f = open("sample_html_of_park.html",'r')
-# soup_park_inst = BeautifulSoup(f.read(), 'html.parser')
-#   (an example of 1 BeautifulSoup instance to pass into your class)
-# sample_inst = NationalSite(soup_park_inst)
-# f.close()
-
+    def get_mailing_address(self):
+        site_name_lower = self.name.lower()
+        site_name_lower_underscore = site_name_lower.replace(" ", "_")
+        basic_info_html_suffix = "_basic_info.html"
+        html_name = site_name_lower_underscore + basic_info_html_suffix
+        try:
+            site_basic_info_file = open(html_name, "r")
+            html = site_basic_info_file.read()
+            site_basic_info_file.close()
+        except:
+            response = requests.get(self.basic_info_link)
+            html = response.text
+            site_basic_info_file = open(html_name, "w")
+            site_basic_info_file.write(html)
+            site_basic_info_file.close()
+        info_soup = BeautifulSoup(html, "html.parser")
+        try:
+            address = info_soup.find("div", {"itemprop": "address"})
+            address_spans = address.find_all("span")
+            address_str = ""
+            for span in address_spans:
+                span_text = span.text
+                span_text_no_new_line = span_text.replace("\n", "")
+                final_span_text = span_text_no_new_line.strip()
+                address_str = address_str + final_span_text + " / "
+            return address_str[:-3]  # don't want extra " / " on the end
+        except:
+            return ""
 
 # PART 3
 
