@@ -154,22 +154,30 @@ class NationalSite(object):
 
 # PART 3
 
-# Create lists of NationalSite objects for each state's parks.
 
-# HINT: Get a Python list of all the HTML BeautifulSoup instances
-# that represent each park, for each state.
+def create_state_nationalsites_list(state_str):
+    state_str_lc = state_str.lower()
+    state_str_lc_no_spaces = state_str_lc.replace(" ", "_")
+    state_data_suffix = "_data.html"
+    state_data_html = state_str_lc_no_spaces + state_data_suffix
+    state_data_file = open(state_data_html, "r")
+    html = state_data_file.read()
+    state_data_file.close()
 
+    state_sites_list = []
+    state_soup = BeautifulSoup(html, "html.parser")
+    state_sites_ul = state_soup.find("ul", {"id": "list_parks"})
+    for state_site_li in state_sites_ul.children:
+        try:
+            site_object = NationalSite(state_site_li)
+            state_sites_list.append(site_object)
+        except:
+            pass
+    return state_sites_list
 
-
-# Code to help you test these out:
-# for p in california_natl_sites:
-# 	print(p)
-#for a in arkansas_natl_sites:
-#    print(a)
-# for m in michigan_natl_sites:
-# 	print(m)
-
-
+arkansas_natl_sites = create_state_nationalsites_list("Arkansas")
+california_natl_sites = create_state_nationalsites_list("California")
+michigan_natl_sites = create_state_nationalsites_list("Michigan")
 
 # PART 4
 
