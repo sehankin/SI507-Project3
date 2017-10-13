@@ -40,22 +40,22 @@ for element in img_alt_text_lst:
 
 # PART 1
 
-try:
-    nps_gov_file = open("nps_gov_data.html", "r")
-    html = nps_gov_file.read()
-    nps_gov_file.close()
-except:
-    nps_gov_home = "https://www.nps.gov/index.htm"
-    response = requests.get(nps_gov_home)
-    html = response.text
-    nps_gov_file = open("nps_gov_data.html", "w")
-    nps_gov_file.write(html)
-    nps_gov_file.close()
 
-nps_gov_soup = BeautifulSoup(html, "html.parser")
-state_list = ["Arkansas", "California", "Michigan"]
-for state in state_list:
-    state_str_lc = state.lower()
+def get_nps_homepage_and_state_html(state_str):
+    try:
+        nps_gov_file = open("nps_gov_data.html", "r")
+        html = nps_gov_file.read()
+        nps_gov_file.close()
+    except:
+        nps_gov_home = "https://www.nps.gov/index.htm"
+        response = requests.get(nps_gov_home)
+        html = response.text
+        nps_gov_file = open("nps_gov_data.html", "w")
+        nps_gov_file.write(html)
+        nps_gov_file.close()
+
+    nps_gov_soup = BeautifulSoup(html, "html.parser")
+    state_str_lc = state_str.lower()
     state_str_lc_no_spaces = state_str_lc.replace(" ", "_")
     state_data_suffix = "_data.html"
     state_data_html = state_str_lc_no_spaces + state_data_suffix
@@ -66,19 +66,29 @@ for state in state_list:
     except:
         dropdown_class = "dropdown-menu SearchBar-keywordSearch"
         dropdown = nps_gov_soup.find("ul", {"class": dropdown_class})
-        dropdown_states = dropdown.find_all("li")
-        for dropdown_state in dropdown_states:
-            state_link = dropdown_state.find("a")
-            state_link_text = state_link.text
-            if state_link_text == state:
-                state_link_href = state_link.get("href")
-                nps_gov_prefix = "https://www.nps.gov"
-                nps_state = nps_gov_prefix + state_link_href
-                response = requests.get(nps_state)
-                html = response.text
-                nps_state_file = open(state_data_html, "w")
-                nps_state_file.write(html)
-                nps_state_file.close()
+        for dropdown_li in dropdown.children:
+            try:
+                state_link = dropdown_li.contents[0]
+                state_link_text = state_link.text
+                if state_link_text == state_str:
+                    state_link_href = state_link.get("href")
+                    nps_gov_prefix = "https://www.nps.gov"
+                    nps_state = nps_gov_prefix + state_link_href
+                    response = requests.get(nps_state)
+                    html = response.text
+                    nps_state_file = open(state_data_html, "w")
+                    nps_state_file.write(html)
+                    nps_state_file.close()
+            except:
+                pass
+
+    print1 = "Not a fruitful function, but your NPS homepage HTML file "
+    print2 = "and your NPS state HTML file are ready\n"
+    print(print1 + print2)
+
+get_nps_homepage_and_state_html("Arkansas")
+get_nps_homepage_and_state_html("California")
+get_nps_homepage_and_state_html("Michigan")
 
 # PART 2
 
@@ -145,12 +155,11 @@ class NationalSite(object):
 
 
 
-
 # Code to help you test these out:
 # for p in california_natl_sites:
 # 	print(p)
-# for a in arkansas_natl_sites:
-# 	print(a)
+#for a in arkansas_natl_sites:
+#    print(a)
 # for m in michigan_natl_sites:
 # 	print(m)
 
