@@ -184,16 +184,6 @@ michigan_natl_sites = create_state_nationalsites_list("Michigan")
 
 # PART 4
 
-# Remember the hints / things you learned from Project 2 about
-# writing CSV files from lists of objects!
-
-# Note that running this step for ALL your data make take a minute or few
-# to run -- so it's a good idea to test any methods/functions you write
-# with just a little bit of data, so running the program will take less time!
-
-# Also remember that IF you have None values that may occur,
-# you might run into some problems and have to debug for where you need
-# to put in some None value / error handling!
 
 def write_site_objects_list_to_csv(list_of_site_objects, file_name):
     outfile = open(file_name, "w")
@@ -203,7 +193,7 @@ def write_site_objects_list_to_csv(list_of_site_objects, file_name):
         if site_object.location:
             site_location = site_object.location
         else:
-            site_location != "";
+            site_location != ""
         if site_object.type:
             site_type = site_object.type
         else:
