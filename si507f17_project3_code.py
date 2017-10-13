@@ -95,14 +95,14 @@ get_nps_homepage_and_state_html("Michigan")
 
 class NationalSite(object):
     def __init__(self, site_soup):
-        self.name = site_soup.find("h3").find("a").text
+        self.name = site_soup.find("h3").contents[0].text
         self.location = site_soup.find("h4").text
         if site_soup.find("h2").text:
             self.type = site_soup.find("h2").text
         else:
             self.type = None
         if site_soup.find("p").text:
-            self.description = site_soup.find("p").text
+            self.description = site_soup.find("p").text.strip()
         else:
             self.description = ""
         all_links = site_soup.find_all("a")
@@ -135,14 +135,20 @@ class NationalSite(object):
         info_soup = BeautifulSoup(html, "html.parser")
         try:
             address = info_soup.find("div", {"itemprop": "address"})
-            address_spans = address.find_all("span")
             address_str = ""
-            for span in address_spans:
-                span_text = span.text
-                span_text_no_new_line = span_text.replace("\n", "")
-                final_span_text = span_text_no_new_line.strip()
-                address_str = address_str + final_span_text + " / "
-            return address_str[:-3]  # don't want extra " / " on the end
+            address_lst = []
+            address_children = address.contents
+            for address_child in address_children:
+                try:
+                    to_add = address_child.text.strip()
+                    if to_add != "":
+                        address_lst.append(to_add)
+                except:
+                    pass
+            for address_element in address_lst[:-1]:
+                address_str = address_str + address_element + " / "
+            address_str = address_str + address_lst[-1]
+            return address_str
         except:
             return ""
 
