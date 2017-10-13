@@ -83,7 +83,7 @@ def get_nps_homepage_and_state_html(state_str):
                 pass
 
     print1 = "Not a fruitful function, but your NPS homepage HTML file "
-    print2 = "and your NPS state HTML file are ready\n"
+    print2 = "and your NPS state HTML file are ready.\n"
     print(print1 + print2)
 
 get_nps_homepage_and_state_html("Arkansas")
@@ -96,7 +96,10 @@ get_nps_homepage_and_state_html("Michigan")
 class NationalSite(object):
     def __init__(self, site_soup):
         self.name = site_soup.find("h3").contents[0].text
-        self.location = site_soup.find("h4").text
+        if site_soup.find("h4").text:
+            self.location = site_soup.find("h4").text
+        else:
+            self.location = ""
         if site_soup.find("h2").text:
             self.type = site_soup.find("h2").text
         else:
@@ -122,7 +125,7 @@ class NationalSite(object):
         site_name_lower_underscore = site_name_lower.replace(" ", "_")
         basic_info_html_suffix = "_basic_info.html"
         html_name = site_name_lower_underscore + basic_info_html_suffix
-        try:
+        try:  # SHOULD REWRITE TO CACHE IN ONE JSON FILE, NOT MANY HTML FILES
             site_basic_info_file = open(html_name, "r")
             html = site_basic_info_file.read()
             site_basic_info_file.close()
@@ -191,3 +194,39 @@ michigan_natl_sites = create_state_nationalsites_list("Michigan")
 # Also remember that IF you have None values that may occur,
 # you might run into some problems and have to debug for where you need
 # to put in some None value / error handling!
+
+def write_site_objects_list_to_csv(list_of_site_objects, file_name):
+    outfile = open(file_name, "w")
+    outfile.write("NAME, LOCATION, TYPE, ADDRESS, DESCRIPTION\n")
+    for site_object in list_of_site_objects:
+        site_name = site_object.name
+        if site_object.location:
+            site_location = site_object.location
+        else:
+            site_location != "";
+        if site_object.type:
+            site_type = site_object.type
+        else:
+            site_type = "None"
+        if site_object.get_mailing_address() != "":
+            site_address = site_object.get_mailing_address()
+        else:
+            site_address = "None"
+        if site_object.description:
+            site_description = site_object.description.replace('"', '``')
+        else:
+            site_description = "None"
+        outfile.write('"{}",'.format(site_name))
+        outfile.write('"{}",'.format(site_location))
+        outfile.write('"{}",'.format(site_type))
+        outfile.write('"{}",'.format(site_address))
+        outfile.write('"{}"'.format(site_description))
+        outfile.write("\n")
+    outfile.close()
+
+csv_ar = "arkansas.csv"
+csv_ca = "california.csv"
+csv_mi = "michigan.csv"
+ar_csv = write_site_objects_list_to_csv(arkansas_natl_sites, csv_ar)
+ca_csv = write_site_objects_list_to_csv(california_natl_sites, csv_ca)
+mi_csv = write_site_objects_list_to_csv(michigan_natl_sites, csv_mi)
